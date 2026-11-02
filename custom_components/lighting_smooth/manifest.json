@@ -1,0 +1,11 @@
+{
+  "domain": "lighting_smooth",
+  "name": "LumaLoop HA",
+  "version": "1.0.0",
+  "documentation": "https://github.com/lczhnu/LumaLoop-HA",
+  "issue_tracker": "https://github.com/lczhnu/LumaLoop-HA/issues",
+  "codeowners": [],
+  "dependencies": ["sun"],
+  "iot_class": "local_polling",
+  "integration_type": "service"
+}

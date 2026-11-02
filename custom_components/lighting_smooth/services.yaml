@@ -1,0 +1,33 @@
+start_calibration:
+  name: Calibrate lamp / 标定灯具
+  description: "Actively sweeps the selected lamp from off to 100%. Keep ambient light stable and disable other automations. Restores power/brightness on completion or cancellation; PID stays off."
+  fields:
+    settle:
+      name: Settle time (seconds)
+      default: 5
+      selector:
+        number:
+          min: 2
+          max: 60
+          step: 1
+          unit_of_measurement: s
+    samples:
+      name: Samples per level
+      default: 3
+      selector:
+        number:
+          min: 2
+          max: 15
+          step: 1
+    max_drift:
+      name: Maximum drift and sample spread
+      default: 3
+      selector:
+        number:
+          min: 0.1
+          max: 50
+          step: 0.1
+          unit_of_measurement: lx
+cancel_calibration:
+  name: Cancel calibration / 取消标定
+  description: Cancel the running sweep and attempt to restore the original lamp power and brightness.

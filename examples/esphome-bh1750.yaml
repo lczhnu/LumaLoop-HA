@@ -1,0 +1,27 @@
+esphome:
+  name: lumaloop-sensor
+  friendly_name: LumaLoop Sensor
+esp32:
+  board: esp32dev
+  framework:
+    type: esp-idf
+logger:
+api:
+  encryption:
+    key: !secret api_encryption_key
+ota:
+  - platform: esphome
+    password: !secret ota_password
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+i2c:
+  sda: GPIO21
+  scl: GPIO22
+  scan: true
+sensor:
+  - platform: bh1750
+    name: BH1750 Illuminance
+    address: 0x23
+    update_interval: 1s
+    force_update: true

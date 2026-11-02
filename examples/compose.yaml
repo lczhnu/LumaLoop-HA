@@ -1,0 +1,12 @@
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:2026.2.3
+    container_name: homeassistant
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
+    # Direct-I2C only: uncomment and grant the container user device permissions.
+    # devices:
+    #   - /dev/i2c-1:/dev/i2c-1

@@ -1,0 +1,44 @@
+title: LumaLoop
+views:
+  - title: Light control / 照明控制
+    path: lumaloop
+    cards:
+      - type: entities
+        title: Observe first / 先观察后实控
+        entities:
+          - select.lighting_smooth_light
+          - switch.lighting_smooth_observe
+          - switch.lighting_smooth_enabled
+          - sensor.lighting_smooth_illuminance
+          - sensor.lighting_smooth_filtered
+          - sensor.lighting_smooth_target
+          - sensor.lighting_smooth_actual
+          - sensor.lighting_smooth_status
+      - type: entities
+        title: Calibration / 标定
+        entities:
+          - sensor.lighting_smooth_calibration_progress
+          - switch.lighting_smooth_calibration_enabled
+      - type: button
+        name: Start sweep / 开始标定（会开关灯）
+        icon: mdi:chart-line
+        tap_action:
+          action: perform-action
+          perform_action: lighting_smooth.start_calibration
+          confirmation:
+            text: Sweep lamp brightness up to 100%? / 将灯具逐档调至100%，是否开始？
+      - type: button
+        name: Cancel calibration / 取消标定
+        tap_action:
+          action: perform-action
+          perform_action: lighting_smooth.cancel_calibration
+      - type: entities
+        title: Tuning / 参数
+        entities:
+          - number.lighting_smooth_kp
+          - number.lighting_smooth_ki
+          - number.lighting_smooth_kd
+          - number.lighting_smooth_interval
+          - number.lighting_smooth_max_step
+          - number.lighting_smooth_filter_tau
+          - button.lighting_smooth_reset

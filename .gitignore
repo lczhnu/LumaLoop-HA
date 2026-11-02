@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.storage/
+secrets.yaml
+.env
+*.log
+*.tgz
+*.zip
+config/
+calibration.json

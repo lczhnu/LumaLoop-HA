@@ -1,0 +1,10 @@
+# Merge into your configuration.yaml. Replace both entity IDs with your own.
+lighting_smooth:
+  light_entity: light.example_lamp
+  illuminance_entity: sensor.example_bh1750_illuminance
+
+# Linux / Raspberry Pi direct-I2C alternative (do not configure both blocks):
+# lighting_smooth:
+#   light_entity: light.example_lamp
+#   bus: 1
+#   address: 0x23
